@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Depth Image View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="DepthImageViewController" customModule="TestDepthData_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qk5-Pw-vQA">
+                                <rect key="frame" x="20" y="822" width="374" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="aMb-bQ-z7I"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="original"/>
+                                    <segment title="depth"/>
+                                    <segment title="mask"/>
+                                    <segment title="filter"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segementedControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="VaD-1N-d8S"/>
+                                </connections>
+                            </segmentedControl>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9tO-2Y-yxG">
+                                <rect key="frame" x="0.0" y="44" width="414" height="778"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="X8y-zM-pMw" appends="YES" id="2jJ-UM-REt"/>
+                                </connections>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="g8B-Gi-Vr0">
+                                <rect key="frame" x="20" y="44" width="374" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dQC-Ra-lGH"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="spotlight"/>
+                                    <segment title="color"/>
+                                    <segment title="blur"/>
+                                </segments>
+                                <connections>
+                                    <action selector="filterTypeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="M3i-03-TSq"/>
+                                </connections>
+                            </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.75" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tOS-Pn-Ldh">
+                                <rect key="frame" x="18" y="789" width="378" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="k5H-6u-dJg"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="UJw-GR-iXm"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9tO-2Y-yxG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ALr-BM-2yd"/>
+                            <constraint firstItem="qk5-Pw-vQA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="MF5-uw-qYA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qk5-Pw-vQA" secondAttribute="trailing" constant="20" id="OKb-7T-ELf"/>
+                            <constraint firstItem="tOS-Pn-Ldh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="WxG-Ux-Pde"/>
+                            <constraint firstItem="qk5-Pw-vQA" firstAttribute="top" secondItem="tOS-Pn-Ldh" secondAttribute="bottom" constant="8" id="XCb-lG-6UZ"/>
+                            <constraint firstItem="qk5-Pw-vQA" firstAttribute="top" secondItem="9tO-2Y-yxG" secondAttribute="bottom" id="ZRQ-rI-Paa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="g8B-Gi-Vr0" secondAttribute="trailing" constant="20" id="bsj-L0-AnD"/>
+                            <constraint firstItem="9tO-2Y-yxG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="d21-pZ-XaW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tOS-Pn-Ldh" secondAttribute="trailing" constant="20" id="fRk-KR-Jka"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9tO-2Y-yxG" secondAttribute="trailing" id="g7l-IM-2xu"/>
+                            <constraint firstItem="g8B-Gi-Vr0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hxV-9X-Paf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qk5-Pw-vQA" secondAttribute="bottom" constant="10" id="m2p-Zq-yAS"/>
+                            <constraint firstItem="g8B-Gi-Vr0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="oao-QJ-4Mm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="depthSlider" destination="tOS-Pn-Ldh" id="qZM-cY-tHT"/>
+                        <outlet property="filterControl" destination="g8B-Gi-Vr0" id="SJs-Tm-E3P"/>
+                        <outlet property="imageModeControl" destination="qk5-Pw-vQA" id="Gya-1n-Mr7"/>
+                        <outlet property="imageView" destination="9tO-2Y-yxG" id="UwB-bP-K1f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="X8y-zM-pMw">
+                    <connections>
+                        <action selector="imageTapped:" destination="BYZ-38-t0r" id="Khv-hN-Cjr"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="121.875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
