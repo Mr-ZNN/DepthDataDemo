@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Depth Video View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="DepthVideoViewController" customModule="Deep_Inside_Hollywood" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v8V-yO-Fnx">
+                                <rect key="frame" x="0.0" y="100" width="375" height="592"/>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.01" maxValue="0.98999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="YqE-Oh-XQT">
+                                <rect key="frame" x="18" y="702" width="339" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="e8B-oF-OuT"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="z1t-eQ-sDK"/>
+                                </connections>
+                            </slider>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bwA-pL-sp6">
+                                <rect key="frame" x="0.0" y="54" width="375" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="sfl-aq-dvA"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="comic"/>
+                                    <segment title="image"/>
+                                    <segment title="blur"/>
+                                    <segment title="crys"/>
+                                    <segment title="color"/>
+                                    <segment title="haha"/>
+                                    <segment title="rotate"/>
+                                    <segment title="edges"/>
+                                </segments>
+                                <connections>
+                                    <action selector="filterTypeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="vh6-s2-Onj"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dcu-FV-Ysh">
+                                <rect key="frame" x="162.66666666666666" y="742" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="qnQ-AK-bHu"/>
+                                    <constraint firstAttribute="width" constant="50" id="yJA-na-9EP"/>
+                                </constraints>
+                                <state key="normal" image="icon_recoed"/>
+                                <connections>
+                                    <action selector="captrueButtonEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JSv-5l-qLi"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FdC-ch-Alf">
+                                <rect key="frame" x="260" y="752" width="100" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hKc-rQ-X6F"/>
+                                    <constraint firstAttribute="width" constant="100" id="jkd-3k-Px0"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Photo"/>
+                                    <segment title="Video"/>
+                                </segments>
+                                <connections>
+                                    <action selector="fileTypeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ids-MA-rK2"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CDy-UW-NNf">
+                                <rect key="frame" x="20" y="662" width="335" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dRI-GQ-oi7"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Original"/>
+                                    <segment title="Depth"/>
+                                    <segment title="Mask"/>
+                                    <segment title="Filtered"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="previewModeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="l6r-kx-Kkz"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CDy-UW-NNf" secondAttribute="trailing" constant="20" id="1RJ-vY-FwC"/>
+                            <constraint firstItem="CDy-UW-NNf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="1d1-ga-LFm"/>
+                            <constraint firstItem="YqE-Oh-XQT" firstAttribute="top" secondItem="v8V-yO-Fnx" secondAttribute="bottom" constant="10" id="6qX-Nh-s2I"/>
+                            <constraint firstItem="Dcu-FV-Ysh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7tr-DJ-xLY"/>
+                            <constraint firstItem="YqE-Oh-XQT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8dB-z3-QYF"/>
+                            <constraint firstItem="bwA-pL-sp6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GQy-pc-4F4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FdC-ch-Alf" secondAttribute="trailing" constant="15" id="KBb-jI-hvK"/>
+                            <constraint firstItem="bwA-pL-sp6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="L5k-JB-s7D"/>
+                            <constraint firstItem="v8V-yO-Fnx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="100" id="Mmw-41-fbf"/>
+                            <constraint firstItem="v8V-yO-Fnx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PZp-gw-PqV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v8V-yO-Fnx" secondAttribute="trailing" id="hoT-gl-Klx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bwA-pL-sp6" secondAttribute="trailing" id="jhY-Qc-1GI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YqE-Oh-XQT" secondAttribute="trailing" constant="20" id="mHM-tF-7xk"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Dcu-FV-Ysh" secondAttribute="bottom" constant="20" id="oab-xn-Ap8"/>
+                            <constraint firstItem="YqE-Oh-XQT" firstAttribute="top" secondItem="CDy-UW-NNf" secondAttribute="bottom" constant="10" id="pun-KE-uCs"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="v8V-yO-Fnx" secondAttribute="bottom" constant="120" id="qoe-zB-lLd"/>
+                            <constraint firstItem="FdC-ch-Alf" firstAttribute="centerY" secondItem="Dcu-FV-Ysh" secondAttribute="centerY" id="yWU-KB-V25"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="captruButton" destination="Dcu-FV-Ysh" id="RcK-PF-b0W"/>
+                        <outlet property="depthSlider" destination="YqE-Oh-XQT" id="z4v-MD-J8P"/>
+                        <outlet property="fileTypeControl" destination="FdC-ch-Alf" id="kcr-Ua-uE7"/>
+                        <outlet property="filterControl" destination="bwA-pL-sp6" id="1TD-dE-mlw"/>
+                        <outlet property="previewModeControl" destination="CDy-UW-NNf" id="ohM-dC-zcm"/>
+                        <outlet property="previewView" destination="v8V-yO-Fnx" id="iuX-8N-lrA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="33.251231527093594"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_recoed" width="81" height="81"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
